@@ -1,0 +1,159 @@
+<div class="page-content" style="background-image:url(assets/images/facture.jpg)">
+    <div class="wizard-v3-content">
+        <div class="wizard-form">
+            <div class="wizard-header">
+
+                <div class="logo_text">{{title}}<span>QuoTe</span></div>
+                <p>Fill all form field to go next step</p>
+            </div>
+            <form class="form-register" #adddevisForm="ngForm" (ngSubmit)="adddevis()">
+                <div id="form-total">
+                    
+                 
+                    <section>
+                        <div class="inner">
+                            <h3>client Information:</h3>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="text" class="form-control" id="first_name" name="first_name"
+                                            required [(ngModel)]="devis.firstName" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">First Name*</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="text" class="form-control" id="last_name" name="last_name"
+                                            required [(ngModel)]="devis.lastName" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Last Name*</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        <input type="text" name="email" id="email" class="form-control" required [(ngModel)]="devis.email" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Email Address</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        <input type="number" class="form-control" id="phone" name="phone" required [(ngModel)]="devis.tel" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Phone Number*</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+                    
+                   
+                    <section>
+                        <div class="inner">
+                            <h3>Quote Information:</h3>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        <input type="number" class="form-control" id="username" name="username"
+                                            required [(ngModel)]="devis.Num" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Num of Quote </span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <label class="form-group">
+                                <input type="date" class="form-control" required [(ngModel)]="devis.Date" [ngModelOptions]="{standalone:true}">
+                                <span> Date</span>
+                                <span class="border"></span>
+                            </label>
+
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="number" class="form-control" id="card" name="card" required [(ngModel)]="devis.code" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Code of service*</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="text" class="form-control" id="card" name="card" required [(ngModel)]="devis.Product" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Product*</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="text" class="form-control" id="card" name="card" required [(ngModel)]="devis.Price" [ngModelOptions]="{standalone:true}"> 
+                                        <span class="label">Price</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="number" class="form-control" id="card" name="card" required [(ngModel)]="devis.TVA" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">TVA</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-holder">
+                                    <label class="form-row-inner">
+                                        <input type="number" class="form-control" id="card" name="card" required [(ngModel)]="devis.amount" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">Amout</span>
+                                        <span class="border"></span>
+                                    </label>
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-holder">
+
+                                    <label class="form-row-inner">
+                                        <input type="number" class="form-control" id="address" name="address" required [(ngModel)]="devis.total" [ngModelOptions]="{standalone:true}">
+                                        <span class="label">TOTAL*</span>
+                                        <span class="border"></span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </section>
+                    
+                    
+                    
+                </div>
+                <button type="submit" class="counter_form_button">{{title}} Quote</button>
+            </form>
+        </div>
+    </div>
+</div>

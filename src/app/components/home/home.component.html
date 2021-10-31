@@ -1,0 +1,239 @@
+
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+	<app-inscription></app-inscription>
+
+	
+
+	<app-features></app-features>
+
+	
+
+	
+
+	
+
+	
+	
+
+	<div class="counter" style ="margin-top: 130px;" >
+		<div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+	
+	
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="counter_content">
+						<h2 class="counter_title">Register Now</h2>
+						<div class="counter_text"><p>“Access to our email services and to some areas of the Site is restricted to users who have registered their details with us. You must not use a false name or email or provide any false information nor impersonate another person when registering for use of the Site and our email services.”.</p></div>
+	
+						<!-- Milestones -->
+	
+						<div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
+
+							<div class="milestone">
+                                <div class="milestone_counter" data-end-value="15">0</div>
+                                <div class="milestone_text">years</div>
+                            </div>
+
+                            <!-- Milestone -->
+                            <div class="milestone">
+                                <div class="milestone_counter" data-end-value="120" data-sign-after="k">0</div>
+                                <div class="milestone_text">years</div>
+                            </div>
+
+                            <!-- Milestone -->
+                            <div class="milestone">
+                                <div class="milestone_counter" data-end-value="670" data-sign-after="+">0</div>
+                                <div class="milestone_text">years</div>
+                            </div>
+
+                            <!-- Milestone -->
+                            <div class="milestone">
+                                <div class="milestone_counter" data-end-value="320">0</div>
+                                <div class="milestone_text">years</div>
+                            </div>
+							
+						  
+	
+				
+				
+						</div>
+					</div>
+	
+				</div>
+			</div>
+	
+			<div class="counter_form">
+				<div class="row fill_height">
+					<div class="col fill_height">
+						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center"[formGroup]="signupform">
+							<div class="logo_text" >sign<span>up</span></div>
+						  
+	
+							<input type="text" class="counter_input" placeholder="First Name:" required="required" formControlName="firstName">
+							<div
+									*ngIf="signupform.controls['firstName'].invalid && (signupform.controls['firstName'].touched ||signupform.controls['firstName'].dirty) ">
+									<div *ngIf="signupform.controls['firstName'].errors.required" style="color:blue;">
+										first name is required
+	
+	
+									</div>
+									<div *ngIf="signupform.controls['firstName'].errors.minlength" style="color:blue;">
+										first name must have at leatse 3 characters
+	
+									</div>
+	
+							</div>
+	
+	
+	
+	
+	
+	
+	
+							<input type="text" class="counter_input" placeholder="Last Name:" required="required" formControlName="lastName">
+							<div
+								*ngIf="signupform.controls['lastName'].invalid && (signupform.controls['lastName'].touched ||signupform.controls['lastName'].dirty) ">
+								<div *ngIf="signupform.controls['lastName'].errors.required" style="color:blue;">
+										Last name is required
+	
+	
+								</div>
+								<div *ngIf="signupform.controls['lastName'].errors.minlength" style="color:blue;">
+										Last name must have at leatse 5 characters
+	
+								</div>
+	
+							</div>
+	
+	
+	
+	
+	
+	
+	
+	
+							<input type="tel" class="counter_input" placeholder="Phone:" required="required"  formControlName="tel">
+							<div
+									*ngIf="signupform.controls['tel'].invalid && (signupform.controls['tel'].touched ||signupform.controls['tel'].dirty) ">
+									<div *ngIf="signupform.controls['tel'].errors.required" style="color:blue;">
+										phone is required
+	
+	
+									</div>
+									<div *ngIf="signupform.controls['tel'].errors.minlength" style="color:blue;">
+										phone must have at leatse 8 characters
+	
+									</div>
+	
+							 </div>
+	
+	
+	
+	
+	
+	
+							<input type="text" class="counter_input" placeholder="Email:" required="required" formControlName="email">
+						<div
+							*ngIf="signupform.controls['email'].invalid && (signupform.controls['email'].touched ||signupform.controls['email'].dirty) ">
+							<div *ngIf="signupform.controls['email'].errors.required" style="color:blue;">
+								email name is required
+	
+	
+							</div>
+							<div *ngIf="signupform.controls['email'].errors.email" style="color:blue;">
+								email is invalid
+	
+							</div>
+	
+						</div>
+	
+	
+	
+	
+	
+	
+							<input type="password" class="counter_input" placeholder="password:" required="required"  formControlName="password">
+	
+							<div
+									*ngIf="signupform.controls['password'].invalid && (signupform.controls['password'].touched ||signupform.controls['password'].dirty) ">
+									<div *ngIf="signupform.controls['password'].errors.required" style="color:blue;">
+										password is required
+	
+	
+									</div>
+									<div *ngIf="signupform.controls['password'].errors.minlength" style="color:blue;">
+										password must have at leatse 8 characters
+	
+									</div>
+	
+							</div>
+	
+	
+	
+	
+	
+	
+	
+							<input type="password" class="counter_input" placeholder=" confirme password:" required="required"   formControlName="confirmPassword">
+							<div
+									*ngIf="signupform.controls['confirmPassword'].invalid && (signupform.controls['confirmPassword'].touched ||signupform.controls['confirmPassword'].dirty) ">
+									<div *ngIf="signupform.controls['confirmPassword'].errors.required"
+										style="color:blue;">
+										confirmPassword is required
+	
+	
+									</div>
+									<div *ngIf="signupform.controls['confirmPassword'].errors.mustMatch"
+										style="color:blue;">
+										confirm Password does not match password
+	
+									</div>
+	
+	
+							</div>
+						
+		   
+	
+	
+	
+						   <button type="submit" class="counter_form_button"(click)="signup(signupform.value)">Register now</button>
+						</form>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+	
+
+	
+
+
+	
+
+	<app-team></app-team>
+
+	
+
+	<app-news></app-news>
+
+	
+
+	
+
+	
+
+	
+

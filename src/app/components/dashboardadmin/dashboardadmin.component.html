@@ -1,0 +1,188 @@
+<div  class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="alert" style="margin-top: 150px;">
+	<strong>success!</strong>  Your data has been deleted successfully .
+	<button (click)="closealert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist" style="margin-top: 300px;">
+		<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+			role="tab" aria-controls="nav-home" aria-selected="true">Invoices</button>
+		<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+			role="tab" aria-controls="nav-profile" aria-selected="false">Quote</button>
+		<button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+			role="tab" aria-controls="nav-contact" aria-selected="false">Employe</button>
+	</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+	<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<button type="button" class="btn btn-primary" style="margin-left: 600px;" (click)="addfactur()">Add Invoices</button>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Num of Invoice</th>
+									<th>firstName</th>
+									<th>lastName</th>
+									<th>Date </th>
+									<th>Total</th>
+									<th>Advance</th>
+									<th>Rest</th>
+									<th>Actions</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let f of adds">
+									<ng-container *ngIf="f.type=== 'factur'">
+										<td>{{f.Num}}</td>
+										<td>{{f.firstName}}</td>
+										<td>{{f.lastName}}</td>
+										<td>{{f.Date}}</td>
+										<td>{{f.total}}</td>
+										<td>{{f.Advance}}</td>
+										<td>{{f.Rest}}</td>
+										<td><button type="button" class="btn btn-danger"(click)="deleteadd(f._id)">Delete</button></td>
+										<td><button type="button" class="btn btn-success" (click)="editfactur(f._id)">Edit</button></td>
+									</ng-container>
+
+								</tr>
+
+								<button class="btn btn-primary"style="margin-left:300px" (click)="downloadpdf()">Download all Invoices</button>
+
+
+
+
+
+
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<button type="button" class="btn btn-primary" style="margin-left: 600px;" (click)="adddevis()">Add Quote</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Num of Quote</th>
+									<th>FirstName</th>
+									<th>LastName</th>
+									<th>Date </th>
+									<th>Total</th>
+									
+									<th>Actions</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let f of adds">
+									<ng-container *ngIf="f.type=== 'devis'">
+										<td>{{f.Num}}</td>
+										<td>{{f.firstName}}</td>
+										<td>{{f.lastName}}</td>
+										<td>{{f.Date}}</td>
+										<td>{{f.total}}</td>
+										
+										<td>
+											<button type="button" class="btn btn-success"(click)="editdevis(f._id)">Edit</button>
+											<button type="button" class="btn btn-danger" (click)="deleteadd(f._id)">Delete</button>
+
+
+										</td>
+
+									</ng-container>
+
+								</tr>
+
+
+
+
+
+
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<button type="button" class="btn btn-primary" style="margin-left: 600px;" (click)="addemploye()">Add Employe</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Email</th>
+									<th>Phone</th>
+									<th>Department</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let a of users">
+									<ng-container *ngIf="a.role=== 'employe'">
+
+										<td>{{a.firstName}}</td>
+										<td>{{a.lastName}}</td>
+										<td>{{a.email }}</td>
+										<td>{{a.tel}}</td>
+										<td>{{a.Department}}</td>
+										<td>
+											<button type="button" class="btn btn-success"
+												(click)="edit(a._id)">Edit</button>
+											<button type="button" class="btn btn-danger"
+												(click)="Delete(a._id)">Delete</button>
+										</td>
+
+									</ng-container>
+
+
+								</tr>
+
+
+
+
+
+
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

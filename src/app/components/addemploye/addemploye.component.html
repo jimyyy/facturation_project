@@ -1,0 +1,93 @@
+<div class="counter" style="margin-top: px;">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div  class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="alert" style="margin-top: 150px;">
+        <strong>success!</strong>  Your data has been entered successfully .
+        <button (click)="closealert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="counter_content">
+                    <h2 class="counter_title" style="margin-top: 100px;">{{title}} Employe</h2>
+                    <div class="counter_text">
+                        <p>Simply dummy text of the printing and
+                             typesetting industry. Lorem Ipsum has been the
+                            industry’s standard dumy text ever since the 1500s, 
+                            when an unknown printer took a galley of
+                            type and scrambled it to make a type specimen 
+                            Simply dummy text of the printing and
+                             typesetting industry. Lorem Ipsum has been the
+                            industry’s standard dumy text ever since the 1500s, 
+                            when an unknown printer took a galley of
+                            type and scrambled it to make a type specimen ,
+                            Simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                           industry’s standard dumy text ever since the 1500s
+                           Simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                           industry’s standard dumy text ever since the 1500s.
+
+
+                           
+
+                            
+                            
+
+
+
+
+                                                                     
+                                                                           
+                                                                            
+                                                                       
+                                                                  
+                                                                 
+
+                        </p>
+                    </div>
+
+                    <!-- Milestones -->
+
+                    <div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
+
+                       
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="counter_form">
+            <div class="row fill_height">
+                <div class="col fill_height">
+                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center" style="margin-block-end:150px ;" style="margin-top: 100px;" #addemployeForm="ngForm" (ngSubmit)="addemploye()">
+                        <div class="logo_text" style="margin-block-end: 30px;">{{title}}<span>Employe</span></div>
+
+
+                        <input type="text" class="counter_input" placeholder="First Name:" required="required" [(ngModel)]="user.firstName" [ngModelOptions]="{standalone:true}">
+                        <input type="text" class="counter_input" placeholder="Last Name:" required="required" [(ngModel)]="user.lastName" [ngModelOptions]="{standalone:true}">
+                        <input type="tel" class="counter_input" placeholder="Phone:" required="required" [(ngModel)]="user.tel" [ngModelOptions]="{standalone:true}">
+                        <input type="email" class="counter_input" placeholder="Email:" required="required" [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+                        <input type="password" class="counter_input" placeholder="Password:" required="required" [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}">
+                        <label for="cars">Department:</label>
+                        <select id="cars" name="carlist" form="carform" class="counter_input" [(ngModel)]="user.Department" [ngModelOptions]="{standalone:true}"  >
+                            <option value="RH">RH</option>
+                            <option value="DEVELLOPEMENT">DEVELLOPEMENT</option>
+                            <option value="Reseaux">Reseaux</option>
+                            <option value="Technicien">Technicien</option>
+                           
+                        </select>
+
+
+                        <button type="submit" class="counter_form_button">{{title}} Employe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="counter" style ="margin-top: 100px;" ></div>
+
+        <div class="wrapper">
+            <div class="inner">
+                <div  class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="alert">
+                    <strong>success!</strong>  Your data has been entered successfully .
+                    <button (click)="closealert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form #addcongesForm="ngForm" (ngSubmit)="addconges()">
+                    
+                  
+                    <h3  >  {{title}} </h3>
+                
+                    <label class="form-group"  >
+                        <input type="text" class="form-control"  required  required [(ngModel)]="conges.firstName" [ngModelOptions]="{standalone:true}" >
+                        
+
+
+                        <span>Your first Name</span>
+                        <span class="border"></span>
+                    </label>
+                    <label class="form-group">
+                        <input type="text" class="form-control"  required  required [(ngModel)]="conges.lastName" [ngModelOptions]="{standalone:true}">
+                        
+                        <span>Your last Name</span>
+                        <span class="border"></span>
+                    </label>
+                    <label class="form-group">
+                        <input type="text" class="form-control"  required  required [(ngModel)]="conges.email" [ngModelOptions]="{standalone:true}">
+                       
+                        <span for="">Your Mail</span>
+                        <span class="border"></span>
+                    </label>
+                    <label class="form-group" >
+                        <textarea name="" id="" class="form-control" required  required [(ngModel)]="conges.message" [ngModelOptions]="{standalone:true}"></textarea>
+                        
+                        <span for="">Your Message</span>
+                        <span class="border"></span>
+                    </label>
+
+                    <label class="form-group">
+                        <input type="date" class="form-control"  required [(ngModel)]="conges.datefrom" [ngModelOptions]="{standalone:true}">
+
+                       
+                        <span> From</span>
+                        <span class="border"></span>
+                    </label>
+                    <label class="form-group">
+                        <input type="date" class="form-control"  required [(ngModel)]="conges.dateto" [ngModelOptions]="{standalone:true}">
+                        
+
+
+                        <span> To</span>
+                        <span class="border"></span>
+                    </label>
+                  
+
+
+
+                    
+                    <button  >{{title}}
+                        <i class="zmdi zmdi-arrow-right" ></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+    

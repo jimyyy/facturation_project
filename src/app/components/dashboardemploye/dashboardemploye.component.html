@@ -1,0 +1,66 @@
+<section class="ftco-section" style="margin-top: 50px;">
+
+  <div  class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="alert" style="margin-top: 150px;">
+    <strong>success!</strong>  Your data has been deleted successfully .
+    <button (click)="closealert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <button type="button" class="btn btn-primary" style="margin-left: 600px;" (click)="addconges()">Request To Leave</button>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-wrap">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of adds">
+                <ng-container *ngIf="c.type=== 'conges'">
+                  <td>{{c.firstName}}</td>
+                  <td>{{c.lastName}}</td>
+                  <td>{{c.email}}</td>
+                  <td>{{c.message}}</td>
+                  <td>{{c.datefrom}}</td>
+                  <td>{{c.dateto}}</td>
+                  <td>
+                    <button type="button" class="btn btn-success" (click)="editconges(c._id)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteconges(c._id)">Delete</button>
+                    <button type="button" class="btn btn-primary" *ngIf="connecter">Confirmer</button>
+                    <button type="button" class="btn btn-primary" *ngIf="connecter">Reset</button>
+
+                  </td>
+
+                </ng-container>
+
+
+
+              </tr>
+
+
+
+
+
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

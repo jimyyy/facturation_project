@@ -1,0 +1,46 @@
+<div class="counter" style ="margin-top: 10px;" >
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="counter_content">
+                    <h2 class="counter_title" style="margin-top: 50px;">Login</h2>
+                    <div class="counter_text"><p>Logging in is usually used to enter a specific page, website or application, which trespassers cannot see. Once the user is logged in, the login token may be used to track what actions the user has taken while connected to the site. Logging out may be performed explicitly by the user taking some actions</p></div>
+
+                    <!-- Milestones -->
+
+                    <div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
+                        
+                      
+
+            
+            
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="counter_form">
+            <div class="row fill_height">
+                <div class="col fill_height">
+                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center" #loginForm="ngForm" (ngSubmit)="login()">
+                        <div class="logo_text" style="margin-top: 100px;" >Log<span>in</span></div>
+                      
+
+                       
+                        <input type="text" class="counter_input" placeholder="Email:" required="required"  [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+                        <input type="password" class="counter_input" placeholder="password:" required="required" [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}">
+                        
+                       <button type="submit" class="counter_form_button">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

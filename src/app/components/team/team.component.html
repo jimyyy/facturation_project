@@ -1,0 +1,31 @@
+<div class="team">
+    <div class="team_background parallax-window" data-parallax="scroll"
+        data-image-src="assets/images/team_background.jpg" data-speed="0.8"></div>
+    <div class="container">
+        <div class="row">
+            <div class="">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">The Best Team</h2>
+                    <div class="section_subtitle">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel gravida arcu. Vestibulum
+                            feugiat, sapien ultrices fermentum congue, quam velit venenatis sem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row team-row" >
+            <div class="col-xl-3" *ngFor="let c of teams ">
+
+
+
+                <!-- Team Item -->
+                <app-teams [childTeam]="c"></app-teams>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
